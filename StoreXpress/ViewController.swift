@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-import UIKit
+import Alamofire
+import SwiftyJSON
 
 @IBDesignable
 class DesignableView: UIView {
@@ -113,9 +113,31 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("asad")
         // Do any additional setup after loading the view, typically from a nib.
+        call();
     }
 
+    
+    func call (){
+       
+        
+        
+        
+    }
+    
+    @IBAction func printHello(sender: AnyObject) {
+        //strLabel.stringValue = "Hello World !!!"
+        print("Hello")
+        Alamofire.request("http://api.androidhive.info/contacts/").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                print(swiftyJsonVar)
+            }
+        }
+    }
+    
+    
 
 }
 
