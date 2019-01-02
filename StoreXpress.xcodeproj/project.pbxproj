@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DE2D2D66E59D116F2D6BC5F /* Pods_StoreXpress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0652BD2A030EF33F23267760 /* Pods_StoreXpress.framework */; };
 		1DEC9B2F21D3A0B100039D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC9B2E21D3A0B100039D28 /* AppDelegate.swift */; };
 		1DEC9B3121D3A0B100039D28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC9B3021D3A0B100039D28 /* ViewController.swift */; };
 		1DEC9B3421D3A0B100039D28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC9B3221D3A0B100039D28 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0652BD2A030EF33F23267760 /* Pods_StoreXpress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoreXpress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEC9B2B21D3A0B100039D28 /* StoreXpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreXpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEC9B2E21D3A0B100039D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DEC9B3021D3A0B100039D28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		1DEC9B3821D3A0B200039D28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEC9B3A21D3A0B200039D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEC9B4121D3A1B000039D28 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		51D6828B4BF3B666D809F481 /* Pods-StoreXpress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreXpress.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress.release.xcconfig"; sourceTree = "<group>"; };
+		565EEF3D8408C65B10713C3D /* Pods-StoreXpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreXpress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DEC9B4221D3A1B000039D28 /* MapKit.framework in Frameworks */,
+				0DE2D2D66E59D116F2D6BC5F /* Pods_StoreXpress.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,7 @@
 				1DEC9B2D21D3A0B100039D28 /* StoreXpress */,
 				1DEC9B2C21D3A0B100039D28 /* Products */,
 				1DEC9B4021D3A1B000039D28 /* Frameworks */,
+				BB4DF4EA4A3EC09818F9ACA5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +78,18 @@
 			isa = PBXGroup;
 			children = (
 				1DEC9B4121D3A1B000039D28 /* MapKit.framework */,
+				0652BD2A030EF33F23267760 /* Pods_StoreXpress.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB4DF4EA4A3EC09818F9ACA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				565EEF3D8408C65B10713C3D /* Pods-StoreXpress.debug.xcconfig */,
+				51D6828B4BF3B666D809F481 /* Pods-StoreXpress.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEC9B3D21D3A0B200039D28 /* Build configuration list for PBXNativeTarget "StoreXpress" */;
 			buildPhases = (
+				B2383E57F7FDC88ECB7B81B4 /* [CP] Check Pods Manifest.lock */,
 				1DEC9B2721D3A0B100039D28 /* Sources */,
 				1DEC9B2821D3A0B100039D28 /* Frameworks */,
 				1DEC9B2921D3A0B100039D28 /* Resources */,
+				52D8166712C03BD99A05903B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +165,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52D8166712C03BD99A05903B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2383E57F7FDC88ECB7B81B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoreXpress-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DEC9B2721D3A0B100039D28 /* Sources */ = {
@@ -297,6 +364,7 @@
 		};
 		1DEC9B3E21D3A0B200039D28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 565EEF3D8408C65B10713C3D /* Pods-StoreXpress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +380,7 @@
 		};
 		1DEC9B3F21D3A0B200039D28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51D6828B4BF3B666D809F481 /* Pods-StoreXpress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
