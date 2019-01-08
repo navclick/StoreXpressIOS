@@ -132,9 +132,10 @@ class ViewController: UIViewController {
     @IBAction func printHello(sender: AnyObject) {
         //strLabel.stringValue = "Hello World !!!"
         print("Hello")
-        Alamofire.request("http://api.androidhive.info/contacts/").responseJSON { (responseData) -> Void in
+        Alamofire.request("http://192.168.100.6/api/category/getcategories").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
+               
                 print(swiftyJsonVar)
             }
         }
