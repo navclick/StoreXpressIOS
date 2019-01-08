@@ -1,0 +1,6 @@
+framework module Pods_StoreXpress {
+  umbrella header "Pods-StoreXpress-umbrella.h"
+
+  export *
+  module * { export * }
+}

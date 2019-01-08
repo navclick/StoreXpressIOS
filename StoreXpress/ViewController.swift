@@ -109,22 +109,25 @@ extension UIView {
     }
 }
 
-class ViewController: UIViewController {
 
+
+class ViewController: UIViewController {
+    @IBOutlet var tblJSON: UITableView!
+    var arrRes = [[String:AnyObject]]() //Array of dictionary
     override func viewDidLoad() {
         super.viewDidLoad()
         print("asad")
-        // Do any additional setup after loading the view, typically from a nib.
-        call();
+        Alamofire.request("http://192.168.100.12/api/category/getcategories").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                 print(swiftyJsonVar)
+               
+            }
+        }
     }
 
     
-    func call (){
-       
-        
-        
-        
-    }
     
     @IBAction func printHello(sender: AnyObject) {
         //strLabel.stringValue = "Hello World !!!"
