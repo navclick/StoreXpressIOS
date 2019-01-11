@@ -7,15 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
 
-struct Headline {
-    
-    var id : Int
-    var title : String
-    var text : String
-    var image : String
-    
-}
+
+
 
 class HeadlineTableViewCell: UITableViewCell {
     
@@ -28,22 +25,48 @@ class HeadlineTableViewCell: UITableViewCell {
 
 
 class AllCatTableViewController: UITableViewController {
-
-    var headlines = [
-        Headline(id: 1, title: "Lorem Ipsum", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", image: "logo"),
-        Headline(id: 2, title: "Aenean condimentum", text: "Ut eget massa erat. Morbi mauris diam, vulputate at luctus non.", image: "logo"),
-        Headline(id: 3, title: "In ac ante sapien", text: "Aliquam egestas ultricies dapibus. Nam molestie nunc.", image: "logo"),
-        ]
+    var arrRes = [[String:AnyObject]]();
+    var CatList=[CateogryModel]();
     
+    let URL_GET_DATA = Webapis.BaseUrl + "category/getcategories"
     
     override func viewDidLoad() {
         super.viewDidLoad()
             print("tabelview")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        print(URL_GET_DATA)
+        
+       // self.CatList.append(CateogryModel(id: 1, name: "Lorem Ipsum1",  image: "logo"))
+       // self.CatList.append(CateogryModel(id: 1, name: "Lorem Ipsum2",  image: "logo"))
+        //self.CatList.append(CateogryModel(id: 1, name: "Lorem Ipsum3",  image: "logo"))
+       
+        Alamofire.request(URL_GET_DATA).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                
+                	if let resData = swiftyJsonVar["value"].arrayObject {
+                    self.arrRes = resData as! [[String:AnyObject]]
+                        
+                        if(self.arrRes.count > 0){
+                            print(self.arrRes.count)
+                             for i in 0..<self.arrRes.count{
+                                
+                                var dict = self.arrRes[i];
+                            
+                                self.CatList.append(CateogryModel(id: dict["id"] as? Int, name: dict["name"] as? String,  image: dict["image"] as? String))
+                            print(self.CatList[i].image)
+                            }
+                            
+                            self.tableView.reloadData()
+                        }
+                
+                }
+                
+                            }
+        }
+        
+       
     }
 
     // MARK: - Table view data source
@@ -55,17 +78,28 @@ class AllCatTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return headlines.count
+        return self.CatList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
         //cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
-        let headline = headlines[indexPath.row]
-        cell.catname?.text = headline.title
+        let category = self.CatList[indexPath.row]
+        cell.catname?.text = category.name
         
-        cell.catimg?.image = UIImage(named: headline.image)
+        
+        Alamofire.request(category.image!).responseImage { response in
+            debugPrint(response)
+            
+            if let image = response.result.value {
+                
+                cell.catimg?.image = image
+            }
+        }
+        
+        
+        
         // Configure the cell...
         
         return cell
