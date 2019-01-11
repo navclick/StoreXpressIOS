@@ -35,10 +35,11 @@ class AllCatTableViewController: UITableViewController {
         Headline(id: 3, title: "In ac ante sapien", text: "Aliquam egestas ultricies dapibus. Nam molestie nunc.", image: "logo"),
         ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
             print("tabelview")
+        self.tableView.backgroundColor = UIColor(red:0.97, green:0.96, blue:0.96, alpha:1.0)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -57,7 +58,9 @@ class AllCatTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return headlines.count
     }
-
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
