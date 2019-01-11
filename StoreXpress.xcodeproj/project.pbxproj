@@ -14,6 +14,7 @@
 		1DEC9B3621D3A0B200039D28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC9B3521D3A0B200039D28 /* Assets.xcassets */; };
 		1DEC9B3921D3A0B200039D28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC9B3721D3A0B200039D28 /* LaunchScreen.storyboard */; };
 		1DEC9B4221D3A1B000039D28 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEC9B4121D3A1B000039D28 /* MapKit.framework */; };
+		25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1DEC9B3821D3A0B200039D28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEC9B3A21D3A0B200039D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEC9B4121D3A1B000039D28 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatTableViewController.swift; sourceTree = "<group>"; };
 		51D6828B4BF3B666D809F481 /* Pods-StoreXpress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreXpress.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress.release.xcconfig"; sourceTree = "<group>"; };
 		565EEF3D8408C65B10713C3D /* Pods-StoreXpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreXpress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				1DEC9B3521D3A0B200039D28 /* Assets.xcassets */,
 				1DEC9B3721D3A0B200039D28 /* LaunchScreen.storyboard */,
 				1DEC9B3A21D3A0B200039D28 /* Info.plist */,
+				25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */,
 			);
 			path = StoreXpress;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StoreXpress/Pods-StoreXpress-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -184,6 +188,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +227,7 @@
 			files = (
 				1DEC9B3121D3A0B100039D28 /* ViewController.swift in Sources */,
 				1DEC9B2F21D3A0B100039D28 /* AppDelegate.swift in Sources */,
+				25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
