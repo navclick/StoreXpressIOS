@@ -33,6 +33,7 @@ class AllCatTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             print("tabelview")
+        self.tableView.backgroundColor = UIColor(red:0.97, green:0.96, blue:0.96, alpha:1.0)
         
         print(URL_GET_DATA)
         
