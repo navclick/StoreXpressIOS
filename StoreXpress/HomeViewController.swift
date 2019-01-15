@@ -48,6 +48,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let URL_GET_DATA = Webapis.BaseUrl + "category/getcategories"
      let URL_GET_PRODUCTS = Webapis.BaseUrl + "item/featureproducts"
     
+    let URL_GET_PRODUCTS_BY_CAT = Webapis.BaseUrl + "item/GetItem"
+    
     
     
     override func viewDidLoad() {
@@ -73,6 +75,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                         
                         self.CollectionCat.reloadData()
                         self.getProducts();
+                        
                     }
                     
                 }
@@ -113,6 +116,51 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                         }
                         
                         self.CollectionProduct.reloadData()
+                    }
+                    
+                }
+                
+            }
+        }
+        
+        
+    }
+    
+    func getProductByCat(categoryname : String){
+        
+        let parm=["categoryname" : categoryname];
+        
+        
+        Alamofire.request(URL_GET_PRODUCTS_BY_CAT,method: .get,
+                          parameters: parm,
+                          encoding: URLEncoding.queryString).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                
+                
+                
+                //print(resData);
+                
+                if let resData = swiftyJsonVar["value"].arrayObject {
+                    self.arrResProduct = resData as! [[String:AnyObject]]
+                    
+                    if(self.arrResProduct.count > 0){
+                        print(self.arrResProduct.count)
+                        for i in 0..<self.arrResProduct.count{
+                            
+                            var dict = self.arrResProduct[i];
+                            
+                            self.ProductList.append(ProductModel(id: dict["id"] as? Int, name: dict["name"] as? String, price    : dict["price"] as? String,  image: dict["image"] as? String))
+                             print(self.ProductList[i].name)
+                        }
+                        
+                        //self.CollectionProduct.reloadData()
+                        
+                        self.CollectionProduct.reloadData()
+                        
+                        
+                        
                     }
                     
                 }
@@ -191,6 +239,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             
             
+            
+            
             return cellPro
             
             
@@ -201,6 +251,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   
+        if collectionView == self.CollectionCat {
+            
+            let cat=self.CatList[indexPath.item];
+            var name="Mobile"//String();
+            
+            print(name);
+            self.getProductByCat(categoryname: name)
+            
+        }
+        
+        
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
