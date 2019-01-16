@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vqO-wB-DRs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dTa-iG-uNl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,7 +91,7 @@
         <!--Login-->
         <scene sceneID="X2y-9T-TLB">
             <objects>
-                <viewController title="Login" id="Ncn-jQ-FIL" sceneMemberID="viewController">
+                <viewController title="Login" id="Ncn-jQ-FIL" customClass="LoginViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wtX-eg-ydA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +184,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="openRegistration:" destination="Ncn-jQ-FIL" eventType="touchDown" id="riT-CH-wfK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -206,6 +209,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HVJ-WT-DO6"/>
                     </view>
+                    <connections>
+                        <segue destination="dTa-iG-uNl" kind="presentation" identifier="OpenRegistration" id="aOt-J0-tDS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfz-gw-SvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,7 +220,7 @@
         <!--Registration-->
         <scene sceneID="mrm-QH-FA2">
             <objects>
-                <viewController title="Registration" id="dTa-iG-uNl" customClass="ViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Registration" id="dTa-iG-uNl" customClass="RegistrationViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H19-wU-fXD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,20 +259,20 @@
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TuG-2v-oMJ">
                                                 <rect key="frame" x="0.0" y="122" width="283" height="30"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-jx-H9d">
                                                 <rect key="frame" x="0.0" y="167" width="283" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -285,6 +291,9 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="register:" destination="dTa-iG-uNl" eventType="touchDown" id="QnG-DF-XNy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -315,6 +324,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="openLogin:" destination="dTa-iG-uNl" eventType="touchDown" id="LSn-yh-FG7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -337,6 +349,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xgu-Kn-pkJ"/>
                     </view>
+                    <connections>
+                        <outlet property="Email" destination="eSl-Y9-EZi" id="t5D-Zy-nn9"/>
+                        <outlet property="FullName" destination="GBu-nc-VvP" id="sbK-EK-2Cg"/>
+                        <outlet property="Password" destination="ZLd-jx-H9d" id="RrW-th-S3d"/>
+                        <outlet property="PhoneNumber" destination="TuG-2v-oMJ" id="gSf-yG-wRv"/>
+                        <segue destination="Ncn-jQ-FIL" kind="presentation" identifier="OpenLogin" id="a6S-dw-J2S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bp-2k-xS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

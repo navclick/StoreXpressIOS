@@ -15,7 +15,12 @@
 		1DEC9B3921D3A0B200039D28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC9B3721D3A0B200039D28 /* LaunchScreen.storyboard */; };
 		1DEC9B4221D3A1B000039D28 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEC9B4121D3A1B000039D28 /* MapKit.framework */; };
 		250D8BA721ECB86700864773 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250D8BA621ECB86700864773 /* HomeViewController.swift */; };
+		2565878321EF4D5600BCD94E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565878221EF4D5600BCD94E /* Constants.swift */; };
+		2565878521EF53FA00BCD94E /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565878421EF53FA00BCD94E /* LoadingOverlay.swift */; };
 		25C4C7CD21EDD8C600300AFF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C7CC21EDD8C600300AFF /* Models.swift */; };
+		25C4C80F21EE049A00300AFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C80E21EE049A00300AFF /* LoginViewController.swift */; };
+		25C4C81121EE04AB00300AFF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C81021EE04AB00300AFF /* RegistrationViewController.swift */; };
+		25C4C81321EE113D00300AFF /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C81221EE113D00300AFF /* Validations.swift */; };
 		25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */; };
 		25D7D31F21E8B4D2003DB970 /* CateogryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D31E21E8B4D2003DB970 /* CateogryModel.swift */; };
 		25D7D32121E8B930003DB970 /* WebApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D32021E8B930003DB970 /* WebApis.swift */; };
@@ -32,7 +37,12 @@
 		1DEC9B3A21D3A0B200039D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEC9B4121D3A1B000039D28 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		250D8BA621ECB86700864773 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2565878221EF4D5600BCD94E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2565878421EF53FA00BCD94E /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		25C4C7CC21EDD8C600300AFF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		25C4C80E21EE049A00300AFF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		25C4C81021EE04AB00300AFF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		25C4C81221EE113D00300AFF /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatTableViewController.swift; sourceTree = "<group>"; };
 		25D7D31E21E8B4D2003DB970 /* CateogryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateogryModel.swift; sourceTree = "<group>"; };
 		25D7D32021E8B930003DB970 /* WebApis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApis.swift; sourceTree = "<group>"; };
@@ -85,6 +95,11 @@
 				25D7D32021E8B930003DB970 /* WebApis.swift */,
 				250D8BA621ECB86700864773 /* HomeViewController.swift */,
 				25C4C7CC21EDD8C600300AFF /* Models.swift */,
+				25C4C80E21EE049A00300AFF /* LoginViewController.swift */,
+				25C4C81021EE04AB00300AFF /* RegistrationViewController.swift */,
+				25C4C81221EE113D00300AFF /* Validations.swift */,
+				2565878221EF4D5600BCD94E /* Constants.swift */,
+				2565878421EF53FA00BCD94E /* LoadingOverlay.swift */,
 			);
 			path = StoreXpress;
 			sourceTree = "<group>";
@@ -238,12 +253,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DEC9B3121D3A0B100039D28 /* ViewController.swift in Sources */,
+				2565878321EF4D5600BCD94E /* Constants.swift in Sources */,
 				25D7D32121E8B930003DB970 /* WebApis.swift in Sources */,
 				25D7D31F21E8B4D2003DB970 /* CateogryModel.swift in Sources */,
+				25C4C81121EE04AB00300AFF /* RegistrationViewController.swift in Sources */,
+				25C4C81321EE113D00300AFF /* Validations.swift in Sources */,
 				1DEC9B2F21D3A0B100039D28 /* AppDelegate.swift in Sources */,
+				25C4C80F21EE049A00300AFF /* LoginViewController.swift in Sources */,
 				25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */,
 				250D8BA721ECB86700864773 /* HomeViewController.swift in Sources */,
 				25C4C7CD21EDD8C600300AFF /* Models.swift in Sources */,
+				2565878521EF53FA00BCD94E /* LoadingOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
