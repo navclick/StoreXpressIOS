@@ -29,7 +29,7 @@ class AllProductCollectionViewCell : UICollectionViewCell{
     
 }
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class HomeViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
 
     var arrRes = [[String:AnyObject]]();
     var arrResProduct = [[String:AnyObject]]();
@@ -54,6 +54,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
         print("Home contoller")
        
         Alamofire.request(URL_GET_DATA).responseJSON { (responseData) -> Void in
