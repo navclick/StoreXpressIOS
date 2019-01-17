@@ -248,6 +248,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+  
+    
+    
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -266,9 +269,5 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
-
-
-
-
 
 }
