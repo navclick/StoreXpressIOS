@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
+
 @IBDesignable
 class DesignableView: UIView {
 }
@@ -107,6 +109,7 @@ extension UIView {
             }
         }
     }
+    
 }
 
 
