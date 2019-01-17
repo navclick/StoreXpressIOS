@@ -110,9 +110,9 @@ class RegistrationViewController: UIViewController {
     }
     
     func reisterUser(){
-        self.loginScreen()
+        //self.loginScreen()
         
-        /*
+        
         
         var VConfirmPassword: String
         var VEmail: String
@@ -160,7 +160,7 @@ class RegistrationViewController: UIViewController {
                     
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                       // print("Handle Ok logic here")
-                    self.loginScreen()
+                    self.performSegue(withIdentifier: "OpenLogin", sender: self)
                     }))
                     
                    }
@@ -181,13 +181,13 @@ class RegistrationViewController: UIViewController {
                 }
             }
             
-            print(parm)
+           
             
             
             
         }
         
-        */
+        
         
         
     }
@@ -229,4 +229,19 @@ extension UIViewController {
             self.present(ac, animated: true, completion: nil)
         }
     }
+    
+    func setToken(token : String){
+        let userDefult = UserDefaults.standard
+        userDefult.set(token , forKey: Constants.KEY_TOKEN)
+      }
+
+    
+    func getToken()-> String{
+        let userDefult = UserDefaults.standard
+        
+        let token=userDefult.string(forKey: Constants.KEY_TOKEN)
+        return token!
+    }
+
+    
 }

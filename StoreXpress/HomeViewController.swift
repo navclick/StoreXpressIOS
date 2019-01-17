@@ -55,6 +55,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home contoller")
+       
         Alamofire.request(URL_GET_DATA).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
@@ -116,6 +117,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                         }
                         
                         self.CollectionProduct.reloadData()
+                        
                     }
                     
                 }

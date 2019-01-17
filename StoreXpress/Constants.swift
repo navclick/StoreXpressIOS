@@ -11,8 +11,6 @@ import Foundation
 class Constants {
  
     static let AppName="StoreXpress"
-    
-    
-    
-    
-}
+     static let LoginFailed="Login Failed!"
+     static let KEY_TOKEN="token"
+    }
