@@ -106,7 +106,7 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
       
-        reisterUser();
+      //  reisterUser();
     }
     
     func reisterUser(){
