@@ -50,8 +50,15 @@ class MenuViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Home", "icon":"logo"])
-        arrayMenuOptions.append(["title":"Play", "icon":"logo"])
+        arrayMenuOptions.append(["title":"Store", "icon":"icon-store"])
+        arrayMenuOptions.append(["title":"Profile", "icon":"icon-profile"])
+        arrayMenuOptions.append(["title":"All Categories", "icon":"icon-all-cate"])
+        arrayMenuOptions.append(["title":"Shopping List", "icon":"icon-shopping-list"])
+        arrayMenuOptions.append(["title":"Product Request", "icon":"icon-request"])
+        arrayMenuOptions.append(["title":"My Orders", "icon":"icon-my-order"])
+        arrayMenuOptions.append(["title":"Shopping Cart", "icon":"icon-shopping-cart"])
+        arrayMenuOptions.append(["title":"About Agha's", "icon":"icon-about"])
+        arrayMenuOptions.append(["title":"Logout", "icon":"icon-logout"])
         
         tblMenuOptions.reloadData()
     }
