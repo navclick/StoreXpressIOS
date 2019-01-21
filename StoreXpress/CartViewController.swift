@@ -8,6 +8,12 @@
 
 import UIKit
 
+class CartTableViewCell: UITableViewCell{
+    
+    
+    
+}
+
 class CartViewController: BaseViewController {
 
     override func viewDidLoad() {
