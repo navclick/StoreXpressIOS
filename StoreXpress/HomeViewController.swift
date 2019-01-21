@@ -116,7 +116,7 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                             
                             var dict = self.arrResProduct[i];
                             
-                            self.ProductList.append(ProductModel(id: dict["id"] as? Int, name: dict["name"] as? String, price	: dict["price"] as? String,  image: dict["image"] as? String))
+                             self.ProductList.append(ProductModel(id: dict["id"] as? Int, name: dict["name"] as? String, price    : dict["price"] as? String, image: dict["image"] as? String, desc: dict["description"] as? String))
                           //  print(self.ProductList[i].name)
                         }
                         
@@ -157,7 +157,7 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                             
                             var dict = self.arrResProduct[i];
                             
-                            self.ProductList.append(ProductModel(id: dict["id"] as? Int, name: dict["name"] as? String, price    : dict["price"] as? String,  image: dict["image"] as? String))
+                            self.ProductList.append(ProductModel(id: dict["id"] as? Int, name: dict["name"] as? String, price    : dict["price"] as? String, image: dict["image"] as? String, desc: dict["description"] as? String))
                              print(self.ProductList[i].name)
                         }
                         
@@ -270,10 +270,21 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             self.getProductByCat(categoryname: name)
             
         }
-        
+        else{
+            
+            let product=self.ProductList[indexPath.item];
+            ProductDetailsModel.id=product.id
+            ProductDetailsModel.desc=product.desc
+            ProductDetailsModel.name=product.name
+            ProductDetailsModel.image=product.image
+            
+            
+             // performSegue(withIdentifier: "openProductDetails", sender: self)
+            openViewControllerBasedOnIdentifier("ProductDetails");
+        }
         
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+       // print("You selected cell #\(indexPath.item)!")
     }
 
 }

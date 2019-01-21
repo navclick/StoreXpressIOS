@@ -7,12 +7,43 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class ProductDetailsViewController: UIViewController {
+class ProductDetailsViewController: BaseViewController {
 
+    @IBOutlet weak var productImage: UIImageView!
+    
+    @IBOutlet weak var productName: UILabel!
+    
+    
+    @IBOutlet weak var productPrice: UILabel!
+    
+    
+    @IBOutlet weak var productPriceTwo: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        addSlideMenuButton()
+        
+        print("Product Details")
+        self.productName?.text = ProductDetailsModel.name
+        self.productPrice?.text = ProductDetailsModel.price
+         self.productPriceTwo?.text = ProductDetailsModel.price
+        
+        
+        
+        
+        Alamofire.request(ProductDetailsModel.image!).responseImage { response in
+            // debugPrint(response)
+            
+            if let image = response.result.value {
+                
+                self.productImage?.image = image
+            }
+        }
+        
         
         }
     
