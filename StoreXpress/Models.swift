@@ -16,10 +16,26 @@ class ProductModel {
     
     var image : String?
     
-    init(id: Int?,name: String?,price: String?, image: String?) {
+    var desc : String?
+    init(id: Int?,name: String?,price: String?, image: String?, desc: String? ) {
         self.id=id;
         self.name = name
          self.price = price
         self.image = image
+        self.desc=desc
     }
+}
+
+class ProductDetailsModel {
+    
+     static var  id : Int?
+    static var  name : String?
+    static var  price : String?
+    
+    static var  image : String?
+    
+    static var  desc : String?
+    
+    
+   
 }
