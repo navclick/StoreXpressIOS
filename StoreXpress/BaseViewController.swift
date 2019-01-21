@@ -36,6 +36,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             self.openViewControllerBasedOnIdentifier("PlayVC")
             
             break
+            
+        case 2:
+            
+            
+            self.openViewControllerBasedOnIdentifier("AllCat")
+            
+            break
         default:
             print("default\n", terminator: "")
         }

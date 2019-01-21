@@ -13,7 +13,7 @@
         <!--Cart-->
         <scene sceneID="OW6-2n-ZQ4">
             <objects>
-                <viewController id="WP0-da-X9g" userLabel="Cart" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Cart" storyboardIdentifier="Cart" id="WP0-da-X9g" userLabel="Cart" customClass="CartViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiL-Vy-vSQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,6 +291,10 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WP0-da-X9g" id="Qxt-IO-Lqi"/>
+                                    <outlet property="delegate" destination="WP0-da-X9g" id="KBX-mB-tmn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -407,7 +411,7 @@
         <!--All Cat Table View Controller-->
         <scene sceneID="3i6-DG-uTB">
             <objects>
-                <tableViewController id="up4-lo-5Tu" customClass="AllCatTableViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="AllCat" storyboardIdentifier="AllCat" id="up4-lo-5Tu" customClass="AllCatTableViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TPy-MK-YjN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
