@@ -54,6 +54,9 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         addSlideMenuButton()
         print("Home contoller")
        
