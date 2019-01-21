@@ -13,7 +13,7 @@
         <!--Cart-->
         <scene sceneID="OW6-2n-ZQ4">
             <objects>
-                <viewController id="WP0-da-X9g" userLabel="Cart" sceneMemberID="viewController">
+                <viewController id="WP0-da-X9g" userLabel="Cart" customClass="CartView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiL-Vy-vSQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,34 +277,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1E0-Jo-Ugy">
-                                <rect key="frame" x="0.0" y="110" width="320" height="363"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hlx-Em-iq0">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hlx-Em-iq0" id="Ijb-8B-DDp">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="djr-DX-cCE" firstAttribute="top" secondItem="1E0-Jo-Ugy" secondAttribute="bottom" id="1On-vQ-0JH"/>
-                            <constraint firstItem="rkg-b0-0xx" firstAttribute="trailing" secondItem="1E0-Jo-Ugy" secondAttribute="trailing" id="2zs-gL-zXp"/>
                             <constraint firstItem="1rg-xV-9ai" firstAttribute="leading" secondItem="rkg-b0-0xx" secondAttribute="leading" constant="20" id="3TM-b2-DKF"/>
                             <constraint firstItem="rkg-b0-0xx" firstAttribute="trailing" secondItem="djr-DX-cCE" secondAttribute="trailing" id="6mK-uB-pWP"/>
                             <constraint firstItem="2rk-0B-RaI" firstAttribute="leading" secondItem="rkg-b0-0xx" secondAttribute="leading" id="CO5-9S-pm0"/>
-                            <constraint firstItem="1E0-Jo-Ugy" firstAttribute="top" secondItem="Cm2-Hn-LYL" secondAttribute="bottom" id="Cqy-lg-vwA"/>
                             <constraint firstItem="Lnk-0t-fsP" firstAttribute="top" secondItem="rkg-b0-0xx" secondAttribute="top" id="G03-wq-mmo"/>
                             <constraint firstItem="rkg-b0-0xx" firstAttribute="bottom" secondItem="1rg-xV-9ai" secondAttribute="bottom" constant="20" id="Ocq-bX-DqO"/>
                             <constraint firstItem="Cm2-Hn-LYL" firstAttribute="top" secondItem="Lnk-0t-fsP" secondAttribute="bottom" id="SXC-RD-sT0"/>
-                            <constraint firstItem="1E0-Jo-Ugy" firstAttribute="leading" secondItem="rkg-b0-0xx" secondAttribute="leading" id="Sod-pX-XIG"/>
                             <constraint firstItem="2rk-0B-RaI" firstAttribute="top" secondItem="Cm2-Hn-LYL" secondAttribute="bottom" id="T9q-rm-Ik6"/>
                             <constraint firstItem="djr-DX-cCE" firstAttribute="leading" secondItem="rkg-b0-0xx" secondAttribute="leading" id="TUM-eD-aAZ"/>
                             <constraint firstItem="Lnk-0t-fsP" firstAttribute="trailing" secondItem="rkg-b0-0xx" secondAttribute="trailing" id="VOJ-VK-O6M"/>
@@ -326,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD2-ja-z16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3690" y="-3464.7887323943664"/>
+            <point key="canvasLocation" x="-3699" y="-3487"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="GHE-ot-Tom">
