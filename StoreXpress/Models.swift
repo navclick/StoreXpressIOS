@@ -39,3 +39,21 @@ class ProductDetailsModel {
     
    
 }
+
+
+class CartModel {
+    
+    var id : Int?
+    var name : String?
+    
+    var image : String?
+    var price : String?
+    
+    init(id: Int?,name: String?, image: String?,price : String?) {
+        self.id=id;
+        self.name = name
+        self.image = image
+        self.price=price
+    }
+}
+

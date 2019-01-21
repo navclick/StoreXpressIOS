@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnk-0t-fsP" userLabel="Title">
-                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOPPING CART" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p43-Wg-ax3">
                                         <rect key="frame" x="20" y="20" width="280" height="20.5"/>
@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cm2-Hn-LYL" userLabel="Total Items">
-                                <rect key="frame" x="0.0" y="80" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="124" width="320" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="thA-zR-cUy">
                                         <rect key="frame" x="20" y="6.5" width="280" height="17"/>
@@ -232,10 +232,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1E0-Jo-Ugy">
-                                <rect key="frame" x="0.0" y="110" width="320" height="363"/>
+                                <rect key="frame" x="0.0" y="154" width="320" height="319"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hlx-Em-iq0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" id="Hlx-Em-iq0" customClass="CartTableViewCell" customModule="StoreXpress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hlx-Em-iq0" id="Ijb-8B-DDp">
@@ -304,6 +304,12 @@
                                                 </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="cartCell"/>
+                                        <connections>
+                                            <outlet property="cartImg" destination="bWZ-2G-xek" id="2Cg-JR-Pda"/>
+                                            <outlet property="cartName" destination="1zW-yb-LCB" id="KcG-oi-VUq"/>
+                                            <outlet property="cartPrice" destination="h7h-Tr-j7N" id="nXI-Gd-K2F"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -389,10 +395,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="cartTable" destination="1E0-Jo-Ugy" id="quY-34-eE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD2-ja-z16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3690" y="-3464.7887323943664"/>
+            <point key="canvasLocation" x="-2109" y="-3654"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="GHE-ot-Tom">
@@ -987,6 +996,7 @@
                         <outlet property="CollectionCat" destination="lv5-7F-Ggp" id="2ZW-sf-xpz"/>
                         <outlet property="CollectionProduct" destination="CWk-tI-1IW" id="fTO-mO-QoJ"/>
                         <segue destination="T0n-kV-BOw" kind="show" identifier="openProductDetails" id="Rlu-z3-aEV"/>
+                        <segue destination="WP0-da-X9g" kind="show" id="98L-Cc-Lkd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK9-Vy-T7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
