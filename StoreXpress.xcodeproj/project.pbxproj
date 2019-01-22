@@ -20,6 +20,7 @@
 		2565878521EF53FA00BCD94E /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565878421EF53FA00BCD94E /* LoadingOverlay.swift */; };
 		2565878721EF722100BCD94E /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565878621EF722100BCD94E /* Spinner.swift */; };
 		257C42B221F5F0B700F14B25 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C42B121F5F0B700F14B25 /* CartViewController.swift */; };
+		258950B721F7416D0086BF93 /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258950B621F7416D0086BF93 /* BadgeButton.swift */; };
 		25B82A0921F0C9C4002283E8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B82A0821F0C9C4002283E8 /* MenuViewController.swift */; };
 		25B82A0B21F0CAC3002283E8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B82A0A21F0CAC3002283E8 /* BaseViewController.swift */; };
 		25C4C7CD21EDD8C600300AFF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C7CC21EDD8C600300AFF /* Models.swift */; };
@@ -47,6 +48,7 @@
 		2565878421EF53FA00BCD94E /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		2565878621EF722100BCD94E /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		257C42B121F5F0B700F14B25 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		258950B621F7416D0086BF93 /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
 		25B82A0821F0C9C4002283E8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		25B82A0A21F0CAC3002283E8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		25C4C7CC21EDD8C600300AFF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				25B82A0821F0C9C4002283E8 /* MenuViewController.swift */,
 				25B82A0A21F0CAC3002283E8 /* BaseViewController.swift */,
 				257C42B121F5F0B700F14B25 /* CartViewController.swift */,
+				258950B621F7416D0086BF93 /* BadgeButton.swift */,
 			);
 			path = StoreXpress;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				25C4C7CD21EDD8C600300AFF /* Models.swift in Sources */,
 				257C42B221F5F0B700F14B25 /* CartViewController.swift in Sources */,
 				25B82A0B21F0CAC3002283E8 /* BaseViewController.swift in Sources */,
+				258950B721F7416D0086BF93 /* BadgeButton.swift in Sources */,
 				2565878521EF53FA00BCD94E /* LoadingOverlay.swift in Sources */,
 				1DEFD59F21EF4E5F00AA99A3 /* ProductDetailsViewController.swift in Sources */,
 			);
