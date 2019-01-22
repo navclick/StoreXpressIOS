@@ -73,6 +73,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             break
             
+        case 7:
+            
+            
+            self.openViewControllerBasedOnIdentifier("AboutUs")
+            
+            break
+            
         default:
             print("default\n", terminator: "")
         }
