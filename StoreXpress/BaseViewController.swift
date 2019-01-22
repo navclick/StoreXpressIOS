@@ -20,7 +20,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
         // 4
-        let image = UIImage(named: "logo.png")
+        let image = UIImage(named: "logo-topbar.png")
         imageView.image = image
         // 5
         navigationItem.titleView = imageView

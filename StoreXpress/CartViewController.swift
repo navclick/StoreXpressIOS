@@ -30,10 +30,14 @@ class CartViewController: BaseViewController,UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product1" as? String,  image: "logo" as? String, price: "100"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product2" as? String,  image: "logo" as? String, price: "200"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product3" as? String,  image: "logo" as? String, price: "300"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product4" as? String,  image: "logo" as? String, price: "400"))
+        self.CartList.append(CartModel(id: 1 as? Int, name: "Product1" as? String,  image: "Pro" as? String, price: "100"))
+          self.CartList.append(CartModel(id: 1 as? Int, name: "Product2" as? String,  image: "Pro1" as? String, price: "200"))
+          self.CartList.append(CartModel(id: 1 as? Int, name: "Product3" as? String,  image: "Pro" as? String, price: "300"))
+          self.CartList.append(CartModel(id: 1 as? Int, name: "Product4" as? String,  image: "Pro1" as? String, price: "400"))
+        self.CartList.append(CartModel(id: 1 as? Int, name: "Product5" as? String,  image: "Pro" as? String, price: "500"))
+        self.CartList.append(CartModel(id: 1 as? Int, name: "Product6" as? String,  image: "Pro1" as? String, price: "600"))
+        self.CartList.append(CartModel(id: 1 as? Int, name: "Product7" as? String,  image: "Pro" as? String, price: "700"))
+        self.CartList.append(CartModel(id: 1 as? Int, name: "Product8" as? String,  image: "Pro1" as? String, price: "800"))
 
         self.cartTable.reloadData();
         // Do any additional setup after loading the view.
