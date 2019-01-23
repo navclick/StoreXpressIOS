@@ -10,6 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
+    let bagButton = BadgeButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +25,14 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         imageView.image = image
         // 5
         navigationItem.titleView = imageView
+        bagButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+       // bagButton.tintColor = UIColor.darkGray
+        bagButton.setImage(UIImage(named: "cart-topbar")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        bagButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
+        bagButton.badge = "4"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bagButton)
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -61,6 +70,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             
             self.openViewControllerBasedOnIdentifier("Cart")
+            
+            break
+            
+        case 7:
+            
+            
+            self.openViewControllerBasedOnIdentifier("AboutUs")
             
             break
             

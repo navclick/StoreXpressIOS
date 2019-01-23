@@ -417,13 +417,13 @@
         <!--About-->
         <scene sceneID="lJ3-UA-cEn">
             <objects>
-                <viewController id="B8m-Jv-Tok" userLabel="About" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AboutUs" storyboardIdentifier="AboutUs" id="B8m-Jv-Tok" userLabel="About" customClass="AboutUsViewController" customModule="StoreXpress" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GUc-TE-cI4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Kg-5F5">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wud-kb-gUx" userLabel="Container">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="784.5"/>
@@ -606,6 +606,9 @@ Karachi, Sindh, Pakistan</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rbL-Ij-gip"/>
                     </view>
+                    <connections>
+                        <outlet property="MapView" destination="o2z-LK-VKH" id="fd8-RK-6iS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IG-6m-pkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1034,7 +1037,7 @@ Karachi, Sindh, Pakistan</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYr-T0-z4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2891" y="-2799"/>
+            <point key="canvasLocation" x="-2691" y="-2676"/>
         </scene>
         <!--Home-->
         <scene sceneID="aCa-Rq-6sj">
@@ -1205,6 +1208,7 @@ Karachi, Sindh, Pakistan</string>
                         <outlet property="CollectionProduct" destination="CWk-tI-1IW" id="fTO-mO-QoJ"/>
                         <segue destination="T0n-kV-BOw" kind="show" identifier="openProductDetails" id="Rlu-z3-aEV"/>
                         <segue destination="WP0-da-X9g" kind="show" id="98L-Cc-Lkd"/>
+                        <segue destination="B8m-Jv-Tok" kind="show" id="lhr-Ir-iqP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK9-Vy-T7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
