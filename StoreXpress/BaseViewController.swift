@@ -30,6 +30,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         bagButton.setImage(UIImage(named: "cart-topbar")?.withRenderingMode(.alwaysTemplate), for: .normal)
         bagButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
         bagButton.badge = "5"
+        bagButton.tag = 78
+        bagButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bagButton)
         updateCartCount();
         
@@ -41,6 +44,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         }
     
     
+    @objc func openCart(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        if btnsendtag.tag == 78{
+            
+            self.openViewControllerBasedOnIdentifier("Cart")
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

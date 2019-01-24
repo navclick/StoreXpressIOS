@@ -277,10 +277,12 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             ProductDetailsModel.desc=product.desc
             ProductDetailsModel.name=product.name
             ProductDetailsModel.image=product.image
-            
+               self.openViewControllerBasedOnIdentifier("ProductDetails")
             
              // performSegue(withIdentifier: "openProductDetails", sender: self)
-            openViewControllerBasedOnIdentifier("ProductDetails");
+            //openViewControllerBasedOnIdentifier("ProductDetails");
+        
+        
         }
         
         // handle tap events
