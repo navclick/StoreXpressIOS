@@ -30,6 +30,12 @@
 		25C4C81121EE04AB00300AFF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C81021EE04AB00300AFF /* RegistrationViewController.swift */; };
 		25C4C81321EE113D00300AFF /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4C81221EE113D00300AFF /* Validations.swift */; };
 		25CE9F6921F9D84600270A60 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CE9F6821F9D84600270A60 /* libsqlite3.tbd */; };
+		25CE9F7821F9D8C800270A60 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7021F9D8C800270A60 /* FMDatabasePool.m */; };
+		25CE9F7921F9D8C800270A60 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7221F9D8C800270A60 /* FMDatabaseAdditions.m */; };
+		25CE9F7A21F9D8C800270A60 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7421F9D8C800270A60 /* FMDatabase.m */; };
+		25CE9F7B21F9D8C800270A60 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7621F9D8C800270A60 /* FMDatabaseQueue.m */; };
+		25CE9F7C21F9D8C800270A60 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7721F9D8C800270A60 /* FMResultSet.m */; };
+		25CE9F7E21F9D93400270A60 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CE9F7D21F9D93400270A60 /* DBManager.swift */; };
 		25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */; };
 		25D7D31F21E8B4D2003DB970 /* CateogryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D31E21E8B4D2003DB970 /* CateogryModel.swift */; };
 		25D7D32121E8B930003DB970 /* WebApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D7D32021E8B930003DB970 /* WebApis.swift */; };
@@ -62,6 +68,20 @@
 		25C4C81021EE04AB00300AFF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		25C4C81221EE113D00300AFF /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		25CE9F6821F9D84600270A60 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		25CE9F6B21F9D8C700270A60 /* StoreXpress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreXpress-Bridging-Header.h"; sourceTree = "<group>"; };
+		25CE9F6C21F9D8C800270A60 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = ../../../FMDBDemo/FMDBTut/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		25CE9F6D21F9D8C800270A60 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = ../../../FMDBDemo/FMDBTut/FMDB.h; sourceTree = "<group>"; };
+		25CE9F6E21F9D8C800270A60 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../../../FMDBDemo/FMDBTut/FMDatabasePool.h; sourceTree = "<group>"; };
+		25CE9F6F21F9D8C800270A60 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = ../../../FMDBDemo/FMDBTut/FMResultSet.h; sourceTree = "<group>"; };
+		25CE9F7021F9D8C800270A60 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../../../FMDBDemo/FMDBTut/FMDatabasePool.m; sourceTree = "<group>"; };
+		25CE9F7121F9D8C800270A60 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../../../FMDBDemo/FMDBTut/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		25CE9F7221F9D8C800270A60 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../../../FMDBDemo/FMDBTut/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		25CE9F7321F9D8C800270A60 /* FMDBTut-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FMDBTut-Bridging-Header.h"; path = "../../../FMDBDemo/FMDBTut/FMDBTut-Bridging-Header.h"; sourceTree = "<group>"; };
+		25CE9F7421F9D8C800270A60 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = ../../../FMDBDemo/FMDBTut/FMDatabase.m; sourceTree = "<group>"; };
+		25CE9F7521F9D8C800270A60 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = ../../../FMDBDemo/FMDBTut/FMDatabase.h; sourceTree = "<group>"; };
+		25CE9F7621F9D8C800270A60 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = ../../../FMDBDemo/FMDBTut/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		25CE9F7721F9D8C800270A60 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../../../FMDBDemo/FMDBTut/FMResultSet.m; sourceTree = "<group>"; };
+		25CE9F7D21F9D93400270A60 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		25D7D31C21E89E69003DB970 /* AllCatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatTableViewController.swift; sourceTree = "<group>"; };
 		25D7D31E21E8B4D2003DB970 /* CateogryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateogryModel.swift; sourceTree = "<group>"; };
 		25D7D32021E8B930003DB970 /* WebApis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApis.swift; sourceTree = "<group>"; };
@@ -129,6 +149,7 @@
 				258950B621F7416D0086BF93 /* BadgeButton.swift */,
 				258950B821F748E80086BF93 /* AboutUsViewController.swift */,
 				258950BA21F74C670086BF93 /* Artwork.swift */,
+				25CE9F7D21F9D93400270A60 /* DBManager.swift */,
 			);
 			path = StoreXpress;
 			sourceTree = "<group>";
@@ -147,6 +168,19 @@
 		25CE9F6A21F9D85400270A60 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
+				25CE9F7521F9D8C800270A60 /* FMDatabase.h */,
+				25CE9F7421F9D8C800270A60 /* FMDatabase.m */,
+				25CE9F7121F9D8C800270A60 /* FMDatabaseAdditions.h */,
+				25CE9F7221F9D8C800270A60 /* FMDatabaseAdditions.m */,
+				25CE9F6E21F9D8C800270A60 /* FMDatabasePool.h */,
+				25CE9F7021F9D8C800270A60 /* FMDatabasePool.m */,
+				25CE9F6C21F9D8C800270A60 /* FMDatabaseQueue.h */,
+				25CE9F7621F9D8C800270A60 /* FMDatabaseQueue.m */,
+				25CE9F6D21F9D8C800270A60 /* FMDB.h */,
+				25CE9F7321F9D8C800270A60 /* FMDBTut-Bridging-Header.h */,
+				25CE9F6F21F9D8C800270A60 /* FMResultSet.h */,
+				25CE9F7721F9D8C800270A60 /* FMResultSet.m */,
+				25CE9F6B21F9D8C700270A60 /* StoreXpress-Bridging-Header.h */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
@@ -194,6 +228,7 @@
 				TargetAttributes = {
 					1DEC9B2A21D3A0B100039D28 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -293,9 +328,13 @@
 				1DEC9B3121D3A0B100039D28 /* ViewController.swift in Sources */,
 				25B82A0921F0C9C4002283E8 /* MenuViewController.swift in Sources */,
 				2565878321EF4D5600BCD94E /* Constants.swift in Sources */,
+				25CE9F7E21F9D93400270A60 /* DBManager.swift in Sources */,
 				25D7D32121E8B930003DB970 /* WebApis.swift in Sources */,
+				25CE9F7821F9D8C800270A60 /* FMDatabasePool.m in Sources */,
 				258950B921F748E80086BF93 /* AboutUsViewController.swift in Sources */,
 				25D7D31F21E8B4D2003DB970 /* CateogryModel.swift in Sources */,
+				25CE9F7921F9D8C800270A60 /* FMDatabaseAdditions.m in Sources */,
+				25CE9F7A21F9D8C800270A60 /* FMDatabase.m in Sources */,
 				2565878721EF722100BCD94E /* Spinner.swift in Sources */,
 				25C4C81121EE04AB00300AFF /* RegistrationViewController.swift in Sources */,
 				25C4C81321EE113D00300AFF /* Validations.swift in Sources */,
@@ -304,7 +343,9 @@
 				25C4C80F21EE049A00300AFF /* LoginViewController.swift in Sources */,
 				25D7D31D21E89E69003DB970 /* AllCatTableViewController.swift in Sources */,
 				250D8BA721ECB86700864773 /* HomeViewController.swift in Sources */,
+				25CE9F7B21F9D8C800270A60 /* FMDatabaseQueue.m in Sources */,
 				25C4C7CD21EDD8C600300AFF /* Models.swift in Sources */,
+				25CE9F7C21F9D8C800270A60 /* FMResultSet.m in Sources */,
 				257C42B221F5F0B700F14B25 /* CartViewController.swift in Sources */,
 				25B82A0B21F0CAC3002283E8 /* BaseViewController.swift in Sources */,
 				258950B721F7416D0086BF93 /* BadgeButton.swift in Sources */,
@@ -455,12 +496,15 @@
 			baseConfigurationReference = 565EEF3D8408C65B10713C3D /* Pods-StoreXpress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StoreXpress/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agas.StoreXpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StoreXpress/FMDB/StoreXpress-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -471,12 +515,14 @@
 			baseConfigurationReference = 51D6828B4BF3B666D809F481 /* Pods-StoreXpress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StoreXpress/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agas.StoreXpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StoreXpress/FMDB/StoreXpress-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

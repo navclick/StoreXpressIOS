@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9SC-gb-RNU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="53l-Q5-Anc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1464,6 +1464,9 @@ Karachi, Sindh, Pakistan</string>
                                 <state key="normal" title="ADD TO CART">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToCart:" destination="T0n-kV-BOw" eventType="touchUpInside" id="9Hq-p3-4RX"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dyM-Ar-nf5">
                                 <rect key="frame" x="20" y="259.5" width="280" height="36.5"/>
@@ -1527,6 +1530,9 @@ A splash of this dressing will turn even the dullest salad into a delightful tre
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PG-OE-s8v">
                                         <rect key="frame" x="20" y="10" width="73.5" height="22"/>
                                         <state key="normal" image="minus"/>
+                                        <connections>
+                                            <action selector="qtyMins:" destination="T0n-kV-BOw" eventType="touchUpInside" id="vNP-2B-nFo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB9-yU-BLM">
                                         <rect key="frame" x="103.5" y="10" width="73" height="22"/>
@@ -1537,6 +1543,9 @@ A splash of this dressing will turn even the dullest salad into a delightful tre
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-6l-MSf">
                                         <rect key="frame" x="186.5" y="10" width="73.5" height="22"/>
                                         <state key="normal" image="plus"/>
+                                        <connections>
+                                            <action selector="qtyPlus:" destination="T0n-kV-BOw" eventType="touchUpInside" id="ubj-Al-VND"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="10" left="20" bottom="10" right="20"/>
@@ -1568,6 +1577,7 @@ A splash of this dressing will turn even the dullest salad into a delightful tre
                     </view>
                     <navigationItem key="navigationItem" id="G8d-pa-4Fg"/>
                     <connections>
+                        <outlet property="lblQty" destination="mB9-yU-BLM" id="awR-mv-zF0"/>
                         <outlet property="productImage" destination="S8Y-ah-Dsi" id="syS-i6-eS8"/>
                         <outlet property="productName" destination="pHb-jo-oPn" id="vvx-qR-61b"/>
                         <outlet property="productPrice" destination="2SF-06-77Q" id="MuI-3u-jkJ"/>

@@ -55,5 +55,16 @@ class CartModel {
         self.image = image
         self.price=price
     }
+    
+    
+    
 }
 
+struct CartItems {
+    var CartID: Int!
+    var ProductID: Int!
+    var ProductName: String!
+    var ProductImage: String!
+    var ProductQty: Int!
+    
+}

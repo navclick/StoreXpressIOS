@@ -13,8 +13,8 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     let bagButton = BadgeButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         var nav = self.navigationController?.navigationBar
+        
         // 2 set the style
       
         // 3
@@ -29,12 +29,19 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
        // bagButton.tintColor = UIColor.darkGray
         bagButton.setImage(UIImage(named: "cart-topbar")?.withRenderingMode(.alwaysTemplate), for: .normal)
         bagButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
-        bagButton.badge = "4"
+        bagButton.badge = "5"
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bagButton)
-        
+        updateCartCount();
         
         // Do any additional setup after loading the view.
     }
+    
+    func updateCartCount(){
+        bagButton.badge = String(DBManager.shared.CartItemCount());
+        }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

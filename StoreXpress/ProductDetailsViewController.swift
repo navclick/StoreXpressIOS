@@ -12,6 +12,16 @@ import SwiftyJSON
 
 class ProductDetailsViewController: BaseViewController {
 
+    
+    var qty = 1
+    
+    @IBOutlet weak var lblQty: UILabel!
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var productImage: UIImageView!
     
     @IBOutlet weak var productName: UILabel!
@@ -22,6 +32,39 @@ class ProductDetailsViewController: BaseViewController {
     
     @IBOutlet weak var productPriceTwo: UILabel!
     
+    
+    
+    @IBAction func qtyPlus(_ sender: Any) {
+        qty = qty + 1;
+        
+        if( qty < 1){
+            
+            qty=1
+            
+        }
+        
+        lblQty.text = String(qty)
+        
+    }
+    
+    
+    @IBAction func qtyMins(_ sender: Any) {
+        
+        qty = qty - 1
+        
+        if( qty < 1){
+            
+            qty=1
+            
+        }
+        
+        lblQty.text = String(qty)
+        
+    }
+    
+    
+    @IBAction func addToCart(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
