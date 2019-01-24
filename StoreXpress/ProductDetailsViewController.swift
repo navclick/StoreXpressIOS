@@ -14,6 +14,8 @@ class ProductDetailsViewController: BaseViewController {
 
     
     var qty = 1
+    var alreadyInCart = false
+    
     
     @IBOutlet weak var lblQty: UILabel!
     
@@ -86,6 +88,18 @@ class ProductDetailsViewController: BaseViewController {
                 self.productImage?.image = image
             }
         }
+        
+        
+        
+        if DBManager.shared.CheckCartItem(withProductID: ProductDetailsModel.id!){
+            
+           qty=DBManager.shared.GetCartItemQty(withProductID: ProductDetailsModel.id!)
+            
+            lblQty.text = String(qty)
+            
+            
+        }
+        
         
         
         }

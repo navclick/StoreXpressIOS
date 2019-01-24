@@ -262,7 +262,65 @@ class DBManager: NSObject {
     
     
     
+    func CheckCartItem(withProductID ID: Int) -> Bool {
     
+        var Incart = false;
+    
+    if openDatabase() {
+    let query = "select * from cart where \(field_ProductID)=?"
+    
+    do {
+    let results = try database.executeQuery(query, values: [ID])
+    
+    if results.next() {
+   
+        Incart = true;
+    
+    }
+    else {
+    print(database.lastError())
+    }
+    }
+    catch {
+    print(error.localizedDescription)
+    }
+    
+    database.close()
+    }
+    
+    return Incart
+    }
+    
+    
+    
+    func GetCartItemQty(withProductID ID: Int) -> Int {
+        
+        var qty = 1;
+        
+        if openDatabase() {
+            let query = "select * from cart where \(field_ProductID)=?"
+            
+            do {
+                let results = try database.executeQuery(query, values: [ID])
+                
+                if results.next() {
+                    
+                    qty = Int(results.int(forColumn: field_ProducQty))
+                    
+                }
+                else {
+                    print(database.lastError())
+                }
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+            database.close()
+        }
+        
+        return qty
+    }
     
     
     func CartItemCount() -> Int! {
