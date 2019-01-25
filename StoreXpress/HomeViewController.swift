@@ -26,14 +26,14 @@ class AllProductCollectionViewCell : UICollectionViewCell{
     
     @IBOutlet weak var ProductName: UILabel!
     
-    @IBOutlet weak var BtnAddToCart: UIButton!
+    @IBOutlet weak var BtnAddToCart: AddToCartButton!
     
     
     
 }
 
 class HomeViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
-
+    var index = -1;
     var arrRes = [[String:AnyObject]]();
     var arrResProduct = [[String:AnyObject]]();
     var CatList=[CateogryModel]();
@@ -232,10 +232,11 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
             // cell.myLabel.text = self.items[indexPath.item]
             // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-            
+            self.index = indexPath.row
             let product = self.ProductList[indexPath.row]
             cellPro.ProductName?.text = product.name
             cellPro.BtnAddToCart.tag = 300
+            cellPro.BtnAddToCart.RowIndex = indexPath.row
             cellPro.BtnAddToCart.addTarget(self, action: #selector(addTocart), for: .touchUpInside)
             
             Alamofire.request(product.image!).responseImage { response in
@@ -259,10 +260,21 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
     }
     
     
-    @objc func addTocart(sender: UIButton!) {
-        let btnsendtag: UIButton = sender
-    
-        print (btnsendtag.tag)
+    @objc func addTocart(sender: AddToCartButton! , Index : Int) {
+        let btnsendtag: AddToCartButton = sender
+    print (btnsendtag.tag)
+        if( btnsendtag.tag==300){
+            
+            if(self.index >= 0){
+                let product = self.ProductList[btnsendtag.RowIndex]
+                
+                       self.addToCartMain(cartId: 1, ProductID: product.id!, ProductName: product.name!, ProductImage: product.image!, ProductQty: 1)
+            }
+            
+            
+        }
+        
+        
     }
     
     
