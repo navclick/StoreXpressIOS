@@ -19,6 +19,8 @@ class DBManager: NSObject {
     let field_ProductImage = "image"
     let field_ProducQty = "qty"
     
+    let field_ProducPrice = "price"
+    
     var productID=0;
     var ProductName="";
     var productImage=""
@@ -53,7 +55,7 @@ class DBManager: NSObject {
             if database != nil {
                 // Open the database.
                 if database.open() {
-                    let createMoviesTableQuery = "create table cart (\(field_CartID) integer primary key autoincrement not null, \(field_ProductID) integer not null, \(field_ProductName) text not null, \(field_ProductImage) text not null, \(field_ProducQty) integer not null)"
+                    let createMoviesTableQuery = "create table cart (\(field_CartID) integer primary key autoincrement not null, \(field_ProductID) integer not null, \(field_ProductName) text not null, \(field_ProductImage) text not null, \(field_ProducQty) integer not null, \(field_ProducPrice) text not null)"
                     
                     do {
                         try database.executeUpdate(createMoviesTableQuery, values: nil)
@@ -109,7 +111,7 @@ class DBManager: NSObject {
             print("open")
             var query = ""
             
-            query += "insert into cart (\(field_CartID), \(field_ProductID), \(field_ProductName), \(field_ProductImage), \(field_ProducQty)) values (null, \(Product.ProductID!), '\(Product.ProductName!)', '\(Product.ProductImage!)', \(Product.ProductQty!));"
+            query += "insert into cart (\(field_CartID), \(field_ProductID), \(field_ProductName), \(field_ProductImage), \(field_ProducQty), \(field_ProducPrice)) values (null, \(Product.ProductID!), '\(Product.ProductName!)', '\(Product.ProductImage!)', \(Product.ProductQty!), '\(Product.ProductPrice!)');"
             
             print(query)
             
@@ -142,7 +144,8 @@ class DBManager: NSObject {
                                              ProductID: Int(results.int(forColumn: field_ProductID)),
                                              ProductName: results.string(forColumn: field_ProductName),
                                              ProductImage: results.string(forColumn: field_ProductImage),
-                                             ProductQty: Int(results.int(forColumn: field_ProducQty))
+                                             ProductQty: Int(results.int(forColumn: field_ProducQty)),
+                                             ProductPrice: results.string(forColumn: field_ProducPrice)
                     )
                     
                     if Cart == nil {
@@ -178,7 +181,8 @@ class DBManager: NSObject {
                                         ProductID: Int(results.int(forColumn: field_ProductID)),
                                         ProductName: results.string(forColumn: field_ProductName),
                                         ProductImage: results.string(forColumn: field_ProductImage),
-                                        ProductQty: Int(results.int(forColumn: field_ProducQty))
+                                        ProductQty: Int(results.int(forColumn: field_ProducQty)),
+                                        ProductPrice: results.string(forColumn: field_ProducPrice)
                     )
                     
                 }
