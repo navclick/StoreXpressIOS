@@ -1132,7 +1132,7 @@ Karachi, Sindh, Pakistan</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Kd-w84" userLabel="Add to cart" customClass="mainaddtocart">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Kd-w84" userLabel="Add to cart">
                                                     <rect key="frame" x="10" y="176" width="130" height="14"/>
                                                     <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" image="cart-main">
@@ -1180,6 +1180,7 @@ Karachi, Sindh, Pakistan</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="BtnAddToCart" destination="baa-Kd-w84" id="8pb-8q-7VF"/>
                                             <outlet property="ProductImage" destination="6A5-Ps-yTQ" id="9SY-eV-ANH"/>
                                             <outlet property="ProductName" destination="hpI-fJ-rgD" id="Y2t-Pr-nhZ"/>
                                         </connections>
@@ -1206,9 +1207,9 @@ Karachi, Sindh, Pakistan</string>
                     <connections>
                         <outlet property="CollectionCat" destination="lv5-7F-Ggp" id="2ZW-sf-xpz"/>
                         <outlet property="CollectionProduct" destination="CWk-tI-1IW" id="fTO-mO-QoJ"/>
-                        <segue destination="T0n-kV-BOw" kind="show" identifier="openProductDetails" id="Rlu-z3-aEV"/>
                         <segue destination="WP0-da-X9g" kind="show" id="98L-Cc-Lkd"/>
                         <segue destination="B8m-Jv-Tok" kind="show" id="lhr-Ir-iqP"/>
+                        <segue destination="T0n-kV-BOw" kind="show" id="xSr-aT-603"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK9-Vy-T7a" userLabel="First Responder" sceneMemberID="firstResponder"/>

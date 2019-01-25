@@ -66,6 +66,7 @@ class ProductDetailsViewController: BaseViewController {
     
     
     @IBAction func addToCart(_ sender: Any) {
+        addToCart()
     }
     
     override func viewDidLoad() {
@@ -94,7 +95,7 @@ class ProductDetailsViewController: BaseViewController {
         if DBManager.shared.CheckCartItem(withProductID: ProductDetailsModel.id!){
             
            qty=DBManager.shared.GetCartItemQty(withProductID: ProductDetailsModel.id!)
-            
+            alreadyInCart = true
             lblQty.text = String(qty)
             
             
@@ -113,5 +114,32 @@ class ProductDetailsViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func addToCart(){
+        
+        if !alreadyInCart{
+            
+            
+            var item = CartItems(CartID: 1, ProductID: ProductDetailsModel.id, ProductName: ProductDetailsModel.name, ProductImage: ProductDetailsModel.image, ProductQty: qty )
+            DBManager.shared.insertCart(Product: item)
+            updateCartCount()
+            self.openViewControllerBasedOnIdentifier("Home")
+            
+        }
+        else{
+            
+            DBManager.shared.updateCartItem(withProductID: ProductDetailsModel.id!, Qty: qty)
+        
+            updateCartCount()
+            self.openViewControllerBasedOnIdentifier("Home")
+        }
+        
+        
+        
+        
+        
+    }
+    
 
 }

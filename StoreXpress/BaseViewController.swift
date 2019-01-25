@@ -30,6 +30,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         bagButton.setImage(UIImage(named: "cart-topbar")?.withRenderingMode(.alwaysTemplate), for: .normal)
         bagButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
         bagButton.badge = "5"
+        bagButton.tag = 78
+        bagButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bagButton)
         updateCartCount();
         
@@ -41,6 +44,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         }
     
     
+    @objc func openCart(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+        if btnsendtag.tag == 78{
+            
+            self.openViewControllerBasedOnIdentifier("Cart")
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -176,4 +186,49 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             sender.isEnabled = true
         }, completion:nil)
     }
+
+
+
+
+
+    func addToCartMain(cartId: Int,ProductID: Int, ProductName: String, ProductImage: String, ProductQty: Int){
+        
+      var alreadyInCartMain=false
+       var PQty = 1
+        if DBManager.shared.CheckCartItem(withProductID: ProductID){
+            
+           PQty = DBManager.shared.GetCartItemQty(withProductID: ProductID)
+            alreadyInCartMain = true
+            
+            
+            
+        }
+        
+        
+        if !alreadyInCartMain{
+            
+            
+            var item = CartItems(CartID: 1, ProductID: ProductID, ProductName: ProductName, ProductImage: ProductImage, ProductQty: ProductQty )
+            DBManager.shared.insertCart(Product: item)
+            updateCartCount()
+            //self.openViewControllerBasedOnIdentifier("Home")
+            
+        }
+        else{
+            PQty = PQty + ProductQty;
+            DBManager.shared.updateCartItem(withProductID: ProductID, Qty: PQty)
+            
+            updateCartCount()
+           // self.openViewControllerBasedOnIdentifier("Home")
+        }
+        
+        
+        
+        
+        
+    }
+
+
+
+
 }

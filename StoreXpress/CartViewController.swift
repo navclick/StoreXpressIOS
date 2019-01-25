@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CartTableViewCell: UITableViewCell{
     
@@ -21,7 +22,7 @@ class CartTableViewCell: UITableViewCell{
 class CartViewController: BaseViewController,UITableViewDataSource, UITableViewDelegate  {
   
     
-    var CartList=[CartModel]();
+    var CartList=[CartItems]();
     
     @IBOutlet weak var cartTable: UITableView!
     
@@ -30,14 +31,7 @@ class CartViewController: BaseViewController,UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product1" as? String,  image: "Pro" as? String, price: "100"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product2" as? String,  image: "Pro1" as? String, price: "200"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product3" as? String,  image: "Pro" as? String, price: "300"))
-          self.CartList.append(CartModel(id: 1 as? Int, name: "Product4" as? String,  image: "Pro1" as? String, price: "400"))
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product5" as? String,  image: "Pro" as? String, price: "500"))
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product6" as? String,  image: "Pro1" as? String, price: "600"))
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product7" as? String,  image: "Pro" as? String, price: "700"))
-        self.CartList.append(CartModel(id: 1 as? Int, name: "Product8" as? String,  image: "Pro1" as? String, price: "800"))
+        CartList = DBManager.shared.loadCart()
 
         self.cartTable.reloadData();
         // Do any additional setup after loading the view.
@@ -51,12 +45,22 @@ class CartViewController: BaseViewController,UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         //cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
         let cart = self.CartList[indexPath.row]
-        cell.cartName?.text = cart.name
-        cell.cartPrice?.text = cart.price
+        cell.cartName?.text = cart.ProductName
+        cell.cartPrice?.text = "100"
       //  cell.
-        var image : UIImage = UIImage(named: cart.image!)!
         
-        cell.cartImg.image = image
+        
+        
+        
+        Alamofire.request( cart.ProductImage).responseImage { response in
+            // debugPrint(response)
+            
+            if let image = response.result.value {
+                
+               cell.cartImg.image = image
+            }
+        }
+        
         
         return cell
     }

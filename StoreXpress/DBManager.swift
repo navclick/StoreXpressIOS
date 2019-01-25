@@ -26,7 +26,7 @@ class DBManager: NSObject {
     
     
     
-    let databaseFileName = "testsqldb.sqlite"
+    let databaseFileName = "storedb.sqlite"
     
     var pathToDatabase: String!
     

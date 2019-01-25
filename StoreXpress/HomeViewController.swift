@@ -26,6 +26,9 @@ class AllProductCollectionViewCell : UICollectionViewCell{
     
     @IBOutlet weak var ProductName: UILabel!
     
+    @IBOutlet weak var BtnAddToCart: UIButton!
+    
+    
     
 }
 
@@ -232,7 +235,8 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             
             let product = self.ProductList[indexPath.row]
             cellPro.ProductName?.text = product.name
-            
+            cellPro.BtnAddToCart.tag = 300
+            cellPro.BtnAddToCart.addTarget(self, action: #selector(addTocart), for: .touchUpInside)
             
             Alamofire.request(product.image!).responseImage { response in
                 // debugPrint(response)
@@ -253,6 +257,14 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
         }
         
     }
+    
+    
+    @objc func addTocart(sender: UIButton!) {
+        let btnsendtag: UIButton = sender
+    
+        print (btnsendtag.tag)
+    }
+    
     
   
     
@@ -277,10 +289,12 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             ProductDetailsModel.desc=product.desc
             ProductDetailsModel.name=product.name
             ProductDetailsModel.image=product.image
-            
+               self.openViewControllerBasedOnIdentifier("ProductDetails")
             
              // performSegue(withIdentifier: "openProductDetails", sender: self)
-            openViewControllerBasedOnIdentifier("ProductDetails");
+            //openViewControllerBasedOnIdentifier("ProductDetails");
+        
+        
         }
         
         // handle tap events
