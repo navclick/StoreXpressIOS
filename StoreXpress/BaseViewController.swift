@@ -186,4 +186,49 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             sender.isEnabled = true
         }, completion:nil)
     }
+
+
+
+
+
+    func addToCartMain(cartId: Int,ProductID: Int, ProductName: String, ProductImage: String, ProductQty: Int){
+        
+      var alreadyInCartMain=false
+       var PQty = 1
+        if DBManager.shared.CheckCartItem(withProductID: ProductID){
+            
+           PQty = DBManager.shared.GetCartItemQty(withProductID: ProductID)
+            alreadyInCartMain = true
+            
+            
+            
+        }
+        
+        
+        if !alreadyInCartMain{
+            
+            
+            var item = CartItems(CartID: 1, ProductID: ProductID, ProductName: ProductName, ProductImage: ProductImage, ProductQty: ProductQty )
+            DBManager.shared.insertCart(Product: item)
+            updateCartCount()
+            //self.openViewControllerBasedOnIdentifier("Home")
+            
+        }
+        else{
+            PQty = PQty + ProductQty;
+            DBManager.shared.updateCartItem(withProductID: ProductID, Qty: PQty)
+            
+            updateCartCount()
+           // self.openViewControllerBasedOnIdentifier("Home")
+        }
+        
+        
+        
+        
+        
+    }
+
+
+
+
 }

@@ -1132,7 +1132,7 @@ Karachi, Sindh, Pakistan</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Kd-w84" userLabel="Add to cart" customClass="mainaddtocart">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Kd-w84" userLabel="Add to cart">
                                                     <rect key="frame" x="10" y="176" width="130" height="14"/>
                                                     <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" image="cart-main">
@@ -1180,6 +1180,7 @@ Karachi, Sindh, Pakistan</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="BtnAddToCart" destination="baa-Kd-w84" id="8pb-8q-7VF"/>
                                             <outlet property="ProductImage" destination="6A5-Ps-yTQ" id="9SY-eV-ANH"/>
                                             <outlet property="ProductName" destination="hpI-fJ-rgD" id="Y2t-Pr-nhZ"/>
                                         </connections>
