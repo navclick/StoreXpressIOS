@@ -211,6 +211,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             var item = CartItems(CartID: 1, ProductID: ProductID, ProductName: ProductName, ProductImage: ProductImage, ProductQty: ProductQty )
             DBManager.shared.insertCart(Product: item)
             updateCartCount()
+            Toast.show(message: Constants.MSG_PRODUCT_ADDED_TO_CART, controller: self)
             //self.openViewControllerBasedOnIdentifier("Home")
             
         }
@@ -219,6 +220,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             DBManager.shared.updateCartItem(withProductID: ProductID, Qty: PQty)
             
             updateCartCount()
+             Toast.show(message: Constants.MSG_PRODUCT_ADDED_TO_CART, controller: self)
            // self.openViewControllerBasedOnIdentifier("Home")
         }
         
