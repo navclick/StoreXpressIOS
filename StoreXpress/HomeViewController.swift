@@ -86,7 +86,15 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                         }
                         
                         self.CollectionCat.reloadData()
+                        
+                        if(Constants.Catselected == ""){
                         self.getProducts();
+                        }
+                        else{
+                            
+                            self.getProductByCat(categoryname: Constants.Catselected )
+                            Constants.Catselected = ""
+                        }
                         
                     }
                     
@@ -231,7 +239,7 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             }
         }
         
-        
+            
         
         return cell
             
@@ -259,6 +267,7 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                     cellPro.ProductImage?.image = image
                 }
             }
+            
             
             
             
