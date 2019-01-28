@@ -774,6 +774,9 @@ Karachi, Sindh, Pakistan</string>
                             <outlet property="delegate" destination="up4-lo-5Tu" id="SLy-zU-3Bo"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="53l-Q5-Anc" kind="presentation" identifier="openHome" id="qAa-nL-F8D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyF-RB-KXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
