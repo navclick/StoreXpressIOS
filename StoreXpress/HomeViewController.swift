@@ -109,6 +109,8 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
         
         // Do any additional setup after loading the view.
     }
+    
+    
 
     
     func getProducts(){
