@@ -355,6 +355,44 @@ class DBManager: NSObject {
     }
     
     
+    
+    func isCartEmpty() -> Bool! {
+        var count=0
+       
+        
+        if openDatabase() {
+            let query = "SELECT COUNT(*) as Count from cart"
+            
+            do {
+                print(database)
+                let results = try database.executeQuery(query, values: nil)
+                
+                
+                while results.next() {
+                    
+                    let DbCount = Int(results.int(forColumn: "Count"))
+                    count = DbCount
+                    if count < 1{
+                        
+                        return true
+                        
+                    }
+                
+                }
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+            database.close()
+        }
+        
+        
+        
+        return false
+    }
+    
+    
 }
 
 

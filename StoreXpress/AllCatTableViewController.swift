@@ -112,6 +112,15 @@ class AllCatTableViewController: UITableViewController {
         return "All Categories"
     }
     
+    
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let category = self.CatList[indexPath.row]
+    Constants.Catselected = category.name!
+    
+      self.performSegue(withIdentifier: "openHome", sender: self)
+    
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
