@@ -21,4 +21,5 @@ class Constants {
     static let MSG_CART_EMPTY="Your shopping cart is empty!"
     
     static let CURR_SIGN="Rs. "
+    static var Catselected = ""
     }
