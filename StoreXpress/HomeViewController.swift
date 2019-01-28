@@ -53,8 +53,9 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     let URL_GET_PRODUCTS_BY_CAT = Webapis.BaseUrl + "item/GetItem"
     
+    @IBOutlet weak var preLoader: UIActivityIndicatorView!
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +63,9 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
         
         addSlideMenuButton()
         print("Home contoller")
+        
+        self.preLoader.startAnimating()
+        
        
         Alamofire.request(URL_GET_DATA).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -126,6 +130,8 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                         }
                         
                         self.CollectionProduct.reloadData()
+                        self.preLoader.stopAnimating()
+                        
                         
                     }
                     
@@ -138,9 +144,10 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
     }
     
     func getProductByCat(categoryname : String){
-        
+        print(categoryname)
+        self.preLoader.startAnimating()
         let parm=["categoryname" : categoryname];
-        
+        ProductList.removeAll()
         
         Alamofire.request(URL_GET_PRODUCTS_BY_CAT,method: .get,
                           parameters: parm,
@@ -168,7 +175,12 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
                         
                         //self.CollectionProduct.reloadData()
                         
-                        self.CollectionProduct.reloadData()
+                        DispatchQueue.main.async {
+                           self.CollectionProduct.reloadData()
+                            self.preLoader.stopAnimating()
+                            
+                        }
+                        
                         
                         
                         
@@ -267,11 +279,11 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
     print (btnsendtag.tag)
         if( btnsendtag.tag==300){
             
-            if(self.index >= 0){
+            
                 let product = self.ProductList[btnsendtag.RowIndex]
                 
-                       self.addToCartMain(cartId: 1, ProductID: product.id!, ProductName: product.name!, ProductImage: product.image!, ProductQty: 1)
-            }
+                       self.addToCartMain(cartId: 1, ProductID: product.id!, ProductName: product.name!, ProductImage: product.image!, ProductQty: 1, ProductP: product.price! )
+            
             
             
         }
@@ -290,10 +302,10 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
         if collectionView == self.CollectionCat {
             
             let cat=self.CatList[indexPath.item];
-            var name="Mobile"//String();
+            var name = cat.name!
             
             print(name);
-            self.getProductByCat(categoryname: name)
+            self.getProductByCat(categoryname: String(name))
             
         }
         else{
@@ -303,6 +315,7 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource, UIColl
             ProductDetailsModel.desc=product.desc
             ProductDetailsModel.name=product.name
             ProductDetailsModel.image=product.image
+            ProductDetailsModel.price = product.price
                self.openViewControllerBasedOnIdentifier("ProductDetails")
             
              // performSegue(withIdentifier: "openProductDetails", sender: self)

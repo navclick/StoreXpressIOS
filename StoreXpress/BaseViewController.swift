@@ -11,6 +11,9 @@ import UIKit
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
     let bagButton = BadgeButton()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var nav = self.navigationController?.navigationBar
@@ -191,7 +194,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
 
 
 
-    func addToCartMain(cartId: Int,ProductID: Int, ProductName: String, ProductImage: String, ProductQty: Int){
+    func addToCartMain(cartId: Int,ProductID: Int, ProductName: String, ProductImage: String, ProductQty: Int, ProductP: String){
         
       var alreadyInCartMain=false
        var PQty = 1
@@ -208,7 +211,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         if !alreadyInCartMain{
             
             
-            var item = CartItems(CartID: 1, ProductID: ProductID, ProductName: ProductName, ProductImage: ProductImage, ProductQty: ProductQty )
+            var item = CartItems(CartID: 1, ProductID: ProductID, ProductName: ProductName, ProductImage: ProductImage, ProductQty: ProductQty, ProductPrice: ProductP )
             DBManager.shared.insertCart(Product: item)
             updateCartCount()
             Toast.show(message: Constants.MSG_PRODUCT_ADDED_TO_CART, controller: self)
@@ -231,6 +234,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
 
 
+    
+     
+    
 
 
 }

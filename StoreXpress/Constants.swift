@@ -16,4 +16,9 @@ class Constants {
      static let QTY_SIGN=" X "
     
     static let MSG_PRODUCT_ADDED_TO_CART="Item successfully Added to cart"
+    static let MSG_PRODUCT_REMOVE_FROM_CART="Item successfully removed to cart"
+    
+    static let MSG_CART_EMPTY="Your shopping cart is empty!"
+    
+    static let CURR_SIGN="Rs. "
     }

@@ -66,5 +66,7 @@ struct CartItems {
     var ProductName: String!
     var ProductImage: String!
     var ProductQty: Int!
+     var ProductPrice: String!
+    
     
 }

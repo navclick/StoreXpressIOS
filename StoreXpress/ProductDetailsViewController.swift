@@ -115,13 +115,14 @@ class ProductDetailsViewController: BaseViewController {
     }
     */
     
+   
     
     func addToCart(){
         
         if !alreadyInCart{
             
             
-            var item = CartItems(CartID: 1, ProductID: ProductDetailsModel.id, ProductName: ProductDetailsModel.name, ProductImage: ProductDetailsModel.image, ProductQty: qty )
+            var item = CartItems(CartID: 1, ProductID: ProductDetailsModel.id, ProductName: ProductDetailsModel.name, ProductImage: ProductDetailsModel.image, ProductQty: qty, ProductPrice: ProductDetailsModel.price  )
             DBManager.shared.insertCart(Product: item)
             updateCartCount()
             self.openViewControllerBasedOnIdentifier("Home")
