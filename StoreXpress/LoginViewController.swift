@@ -21,9 +21,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
-    
-    
     func Validate() -> Bool{
         
         let response = Validation.shared.validate(values: (ValidationType.email, txtUsername.text!), (ValidationType.password, txtPassword.text!))
